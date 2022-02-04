@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./styles.scss"
+import Form from './components/Form';
+import Table from './components/Table';
+import EditForm from './components/EditForm';
+
+import { DataConsumer } from './context/DataProvider';
+
+
 
 function App() {
+  const { isEdit } = DataConsumer();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     
+       <section className="total-section">
+        <div className="wrapper">
+          <div className="container1">
+          {
+            isEdit ? <EditForm /> : <Form />
+          }
+          </div>
+          <div className="container2">
+
+             <Table />
+
+          </div>
+        </div>
+      </section>
+    
+    </>
   );
 }
 
