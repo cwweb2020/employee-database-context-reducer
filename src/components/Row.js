@@ -22,7 +22,7 @@ const Row = () => {
       <tr key={index}>
         <th scope="row">{index + 1}</th>
         <td className="text-capitalize">{e.name}</td>
-        <td>{e.lastname}</td>
+        <td className="text-capitalize">{e.lastname}</td>
         <td>{e.phone}</td>
        
         <td>
