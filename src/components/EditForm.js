@@ -4,7 +4,7 @@ import { DataConsumer } from "../context/DataProvider";
 
 
 const EditForm = () => {
-    const { employeeChosen, editUserDefinitely } = DataConsumer();
+    const { state: {employeeChosen}, editUserDefinitely } = DataConsumer();
     const [data, setData] = useState( employeeChosen )
   
 

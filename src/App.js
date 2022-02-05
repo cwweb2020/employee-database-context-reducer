@@ -10,7 +10,7 @@ import { DataConsumer } from './context/DataProvider';
 
 
 function App() {
-  const { isEdit } = DataConsumer();
+  const { state:{isEdit} } = DataConsumer();
   return (
     <>
      

@@ -2,7 +2,7 @@ import React from "react";
 import { DataConsumer } from "../context/DataProvider";
 
 const Row = () => {
-  const { Allemployees, deleteEmployee, showEditForm, editEmployeefn } = DataConsumer();
+  const { state:{Allemployees}, showEditForm, editEmployeefn,deleteEmployee } = DataConsumer();
 
  const handleDelete = (id) => {
       deleteEmployee(id);
