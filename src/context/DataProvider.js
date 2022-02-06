@@ -1,4 +1,4 @@
-import { useContext, createContext, useState, useReducer } from "react";
+import { useContext, createContext, useReducer } from "react";
 import { v4 as uuid } from "uuid";
 
 import reducer from "./DataReducer";
@@ -16,6 +16,7 @@ export const DataConsumer = () => useContext(DataContext);
 
  const DataProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
   console.log(state);
   // const [Allemployees, setAllemployees] = useState([]);
   // const [isEdit, setIsEdit] = useState(false);

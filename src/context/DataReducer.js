@@ -26,7 +26,7 @@ const reducer=(state,action)=>{
              return {
                 ...state,
                 Allemployees:state.Allemployees.map( employee=>employee.id===action.payload.id?action.payload : employee )
-             }                 
+            }                 
 
 
         default:
