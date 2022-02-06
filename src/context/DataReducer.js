@@ -25,7 +25,7 @@ const reducer=(state,action)=>{
             case EDIT_EMPLOYEE:
              return {
                 ...state,
-                Allemployees:state.Allemployees.map(employee=>employee.id===action.payload.id?action.payload : employee)
+                Allemployees:state.Allemployees.map( employee=>employee.id===action.payload.id?action.payload : employee )
              }                 
 
 
