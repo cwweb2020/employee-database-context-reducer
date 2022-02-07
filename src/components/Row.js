@@ -1,5 +1,7 @@
 import React from "react";
 import { DataConsumer } from "../context/DataProvider";
+import { BsFillPencilFill } from 'react-icons/bs';
+import { ImBin2 } from 'react-icons/im';
 
 const Row = () => {
   const { state:{Allemployees}, showEditForm, editEmployeefn,deleteEmployee } = DataConsumer();
@@ -26,8 +28,17 @@ const Row = () => {
         <td>{e.phone}</td>
        
         <td>
-            <button className="btn btn-primary me-2" onClick={()=> handleEdit(e)}>Edit</button>
-            <button className="btn btn-danger" onClick={()=> handleDelete(e.id)}>Delete</button>
+        <BsFillPencilFill 
+          className="me-2"
+          onClick={() => handleEdit(e)}
+        />
+
+        <ImBin2 
+          className="ms-3"
+          onClick={() => handleDelete(e.id)}
+          
+        />
+
         </td>
       </tr>
       ))

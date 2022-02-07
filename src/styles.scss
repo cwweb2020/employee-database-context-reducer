@@ -6,10 +6,11 @@
 
 
 .total-section {
+    background-color: #d3d3d324;
 
       .wrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 40% 1fr;
         padding: 50px 0; 
         width: 85%;
         margin: 0 auto;
@@ -22,4 +23,11 @@
                 padding: 80px 0 0 0;
             }
       }
+}
+.form-total {
+    border-radius: 15px;
+}
+
+tbody {
+    background-color: white;
 }

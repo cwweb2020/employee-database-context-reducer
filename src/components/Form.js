@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { DataConsumer } from "../context/DataProvider";
+import Button from '@material-ui/core/Button';
 
 
 
@@ -30,7 +31,7 @@ const Form = () => {
     <>
      
       <h3>Add employee</h3>
-      <form className="form-control mt-5 p-4" onSubmit={handleSubmit}>
+      <form className="form-control mt-5 p-4 form-total" onSubmit={handleSubmit}>
         <label>Name</label>
         <input
           required
@@ -58,9 +59,12 @@ const Form = () => {
           name="phone"
           onChange={handleChange}
         />
-          <button className="btn btn-primary w-100 mt-4" type="submit">
+         <Button className="mt-4 w-100" variant="contained" color="primary" type="submit">
+              Add
+         </Button>
+          {/* <button className="btn btn-primary w-100 mt-4" type="submit">
             Add
-          </button>
+          </button> */}
       </form>
     </>
   );

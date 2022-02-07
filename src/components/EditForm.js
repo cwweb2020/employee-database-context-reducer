@@ -1,30 +1,28 @@
 import React, { useState } from "react";
 import { DataConsumer } from "../context/DataProvider";
-
-
+import Button from "@material-ui/core/Button";
 
 const EditForm = () => {
-    const { state: {employeeChosen}, editUserDefinitely } = DataConsumer();
-    const [data, setData] = useState( employeeChosen )
-  
+  const {
+    state: { employeeChosen },
+    editUserDefinitely,
+  } = DataConsumer();
+  const [data, setData] = useState(employeeChosen);
 
+  const handleChange = (e) => {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-    const handleChange = (e) => {
-       setData({
-              ...data,
-                [e.target.name]: e.target.value
-            })
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        e.target.reset()
-    }
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    e.target.reset();
+  };
 
   return (
     <>
-     
       <h3>Edit employee</h3>
       <form className="form-control mt-5 p-4" onSubmit={handleSubmit}>
         <label>Name</label>
@@ -45,7 +43,7 @@ const EditForm = () => {
           className="form-control my-3"
           name="lastname"
           onChange={handleChange}
-            value={data.lastname}
+          value={data.lastname}
         />
         <label>Phone</label>
         <input
@@ -55,11 +53,19 @@ const EditForm = () => {
           className="form-control my-3"
           name="phone"
           onChange={handleChange}
-            value={data.phone}
+          value={data.phone}
         />
-          <button className="btn btn-primary w-100 mt-4" type="submit" onClick={() => editUserDefinitely(data)}>
-            Edit
-          </button>
+        <Button
+          className="mt-4 w-100"
+          variant="contained"
+          color="primary"
+          type="submit"
+          onClick={() => editUserDefinitely(data)}
+        >
+          Edit
+        </Button>
+        {/* <button className="btn btn-primary w-100 mt-4" type="submit" onClick={() => editUserDefinitely(data)}>
+          </button> */}
       </form>
     </>
   );
