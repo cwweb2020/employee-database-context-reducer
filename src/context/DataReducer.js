@@ -10,7 +10,7 @@ const reducer=(state,action)=>{
             case DELETE_EMPLOYEE:
                 return {    
                     ...state,
-                Allemployees:state.Allemployees.filter(employee=>employee.id!==action.payload)
+                Allemployees:state.Allemployees.filter(employee=>employee.id !== action.payload)
                 }
             case SHOW_EDIT_FORM:
                 return {
